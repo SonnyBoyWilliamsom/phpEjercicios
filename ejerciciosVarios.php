@@ -44,7 +44,7 @@
         
         //var_dump($array_index);
         }else{
-            echo "You did not enter any numbers!!";
+            echo "Hey! You did not enter any numbers!!";
             
         }
         
