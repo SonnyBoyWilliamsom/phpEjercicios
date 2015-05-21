@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        $nota=8;
+        $nota=5;
               
 //        if($nota<5){
 //            echo 'Suspenso';
@@ -45,10 +45,32 @@ and open the template in the editor.
         }else if($nota>=6){
             echo 'Bien';
         }else if($nota>=5){
-            echo 'Aprobado';
+            echo 'Suficiente';
         }else{
             echo 'Suspenso';
         }
+        ?>
+        
+        <!----------------------------------------------------->
+        
+        <?php
+            $tipo_comida="verdura";
+            $animal=false;
+            $tipos=array("carnivoro","vegetariano","omnivoro","vegano");
+            
+            if($tipo_comida=="carne"){
+                echo $tipos[0];
+            }else if($tipo_comida=="verdura"){
+                if($animal){
+                    echo $tipo[1];
+                }else{
+                    echo $tipo[3];
+                }
+                
+            }else{
+                echo $tipo[2];
+            }
+        
         ?>
     </body>
 </html>

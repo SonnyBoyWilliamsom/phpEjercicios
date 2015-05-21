@@ -17,9 +17,8 @@
             for($i=0;$i<count($array_num);$i++){//bucle for para recorrer el array de números
 
                 if($array_num[$i]<$array_num[$i+1]&&$array_num[$biggest_num_pos]<$array_num[$i+1]){//valoración de resultado por posición
-                    //Si (valor actual menor) a (valor siguiente) Y (mayor valor) menor que (valor siguiente)
+                    //Si (valor actual) menor a (valor siguiente) Y (mayor valor) menor que (valor siguiente)
                     $biggest_num_pos = $i+1;//el valor mayor corresponde a la posicion siguiente
-
                     $b=0;
                     $n=1;
                 }elseif($array_num[$biggest_num_pos]==$array_num[$i+1]){
