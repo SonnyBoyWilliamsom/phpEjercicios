@@ -11,7 +11,44 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code here
+        $nota=8;
+              
+//        if($nota<5){
+//            echo 'Suspenso';
+//        }else{
+//            if($nota<7){
+//                echo 'Bien';
+//            }else{
+//                if($nota<9){
+//                    echo 'Notable';
+//                }else{
+//                    echo 'Sobre';
+//                }
+//            }
+//        }
+        
+//        if($nota<5){
+//            echo 'Suspenso';
+//        }else if($nota<7){
+//            echo 'Bien';
+//            
+//        }else if($nota<9){
+//            echo 'Notable';
+//        }else {
+//            echo 'Sobresaliente';
+//        }
+        
+        if($nota>=9){
+            echo 'Sobresaliente';
+        }else if($nota>=7){
+            echo 'Notable';
+        }else if($nota>=6){
+            echo 'Bien';
+        }else if($nota>=5){
+            echo 'Aprobado';
+        }else{
+            echo 'Suspenso';
+        }
         ?>
     </body>
 </html>
