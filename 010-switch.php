@@ -44,5 +44,33 @@ and open the template in the editor.
         
         echo $msg;
         ?>
+ <!------------------------------------------------------------------------->
+        <h2>Ejercicio</h2>
+                    
+        <?php
+        $edad=1900;
+        $destino="francia";
+        if(2015-$edad>=18){
+            
+            switch ($destino){
+            case "francia":
+                $msg= "Von voayage";
+                break;
+            case "alemania":
+                $msg="gute fahrt";
+                break;
+            case "inglaterra":
+                $msg="Good Trip";
+                break;
+            default:
+                $msg="Buen viaje";
+        }
+            
+        }else{
+            $msg="Debes viajar en compañia de un adulto";
+        }
+        echo $msg;
+        ?>
+        
     </body>
 </html>

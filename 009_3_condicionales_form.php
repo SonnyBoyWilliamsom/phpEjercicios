@@ -150,7 +150,7 @@ and open the template in the editor.
         
         <?php
         //Eres menor NOMBRE
-        //Bienvenido/Bienvenida
+        //Bienvenido/Bienvenida+----------------------
         
         if(isset($_GET["form4"])){
             
@@ -167,5 +167,7 @@ and open the template in the editor.
             }       
         }
         ?>
+        
+        
     </body>
 </html>
