@@ -52,7 +52,7 @@ and open the template in the editor.
         $destino="francia";
         if(2015-$edad>=18){
             
-            switch ($destino){
+            switch (mb_strtolower($destino,"UTF-8")){
             case "francia":
                 $msg= "Von voayage";
                 break;
