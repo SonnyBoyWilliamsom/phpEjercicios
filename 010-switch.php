@@ -71,6 +71,50 @@ and open the template in the editor.
         }
         echo $msg;
         ?>
-        
+<!------------------------------------------------------------------------->
+    <h2>Práctica validación de hora</h2>
+    <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="get">
+        <input name="hora" type="number" placeholder="Hora 0-23" required>*
+        <input name="formHora" type="submit" value="Send">
+               
+    </form>
+    
+    <?php
+    if(isset($_GET["formHora"])){
+        extract($_GET);
+        if(0<=$hora && $hora<=23){
+            switch($hora){
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                    $msgh= "Buenos días";
+                    break;
+                case 12:
+                case 13:
+                case 14:
+                case 15:
+                case 16:
+                case 17:
+                case 18:
+                case 19:
+                case 20:
+                    $msgh= "Buenas tardes";
+                    break;
+                default :
+                    $msgh= "Buenas noches";
+            }
+            
+        }else{
+        $msgh= 'Hora no válida';
+        }  
+        echo $msgh;
+    }
+    
+    ?>
+    
+                    
     </body>
 </html>
