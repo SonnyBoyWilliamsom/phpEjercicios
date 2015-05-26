@@ -13,7 +13,7 @@
         
         $biggest_num_pos=0;//variable que almacena la posición del número más alto del array
         
-        if($hay_numeros==true){
+        if($hay_numeros){
             for($i=0;$i<count($array_num);$i++){//bucle for para recorrer el array de números
 
                 if($array_num[$i]<$array_num[$i+1]&&$array_num[$biggest_num_pos]<$array_num[$i+1]){//valoración de resultado por posición
