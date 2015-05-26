@@ -19,7 +19,7 @@
                 if($array_num[$i]<$array_num[$i+1]&&$array_num[$biggest_num_pos]<$array_num[$i+1]){//valoración de resultado por posición
                     //Si (valor actual) menor a (valor siguiente) Y (mayor valor) menor que (valor siguiente)
                     $biggest_num_pos = $i+1;//el valor mayor corresponde a la posicion siguiente
-                    $b=0;
+                    $b=0;//REinicio de valores cada vez que se encuentra una nuevo valor máximo
                     $n=1;
                 }elseif($array_num[$biggest_num_pos]==$array_num[$i+1]){
                 //sino si el mayor valor sigue siendo el actual se contabiliza el numero de veces que aparece y las posiciones
