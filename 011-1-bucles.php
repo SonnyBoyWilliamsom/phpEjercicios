@@ -15,14 +15,12 @@ and open the template in the editor.
         
         <!-------------------------------------------------------------------------------->
         
-        <h2>Bucle While</h2>
+        <h3>Bucle While</h3>
        
         <?php
         $a=0;
             while ($a<=10){
-                
-                echo $a.'-';
-                $a++;
+                echo $a++.'-';
             }
         ?>
         <br>
@@ -33,6 +31,33 @@ and open the template in the editor.
                 echo 10-$a.'-';
                 $a++;
             }
+        ?>
+         <!-------------------------------------------------------------------------------->
+        
+        <h3>Recorrer un array tradicional</h3>
+        <?php 
+        $a=0;
+        $alumnos=array("oscar","jairo","jesús","imanol","yolanda");
+        while ($a<count($alumnos)){
+            echo $alumnos[$a++].', ';
+        }
+        ?>
+       
+          
+        <h3>Bucle For</h3>
+        <?php 
+        for($i=0;$i<11;$i++){
+            echo $i.'-';
+            }?><br>
+        <?php
+        for($i=0;$i<11;$i++){
+            echo 10-$i.'-';
+        }?><br>
+        <?php
+        for($i=0;$i<count($alumnos);$i++){
+            echo $alumnos[$i].'-';
+        }
+        
         ?>
     </body>
 </html>
