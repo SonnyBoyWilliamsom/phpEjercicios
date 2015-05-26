@@ -114,7 +114,16 @@ and open the template in the editor.
     }
     
     ?>
-    
+     <!-------------------------------------------------------------------------------->
+        
+        <h2>Recorrer un array tradicional</h2>
+        <?php 
+        $a=0;
+        $alumnos=array("oscar","jairo","jesús","imanol");
+        while ($a<count($alumnos)){
+            echo $alumnos[$a++].', ';
+        }
+        ?>
                     
     </body>
 </html>
