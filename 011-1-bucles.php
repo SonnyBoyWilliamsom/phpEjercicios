@@ -8,6 +8,11 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <style>
+table, th, td {
+    border: 1px solid tomato;
+}
+</style>
     </head>
     <body>
         <h1>Bucles</h1>
@@ -59,5 +64,37 @@ and open the template in the editor.
         }
         
         ?>
+         <!-------------------------------------------------------------------------------->
+        
+        <h3>Bucle foreach()</h3>
+        <?php
+        //Sintaxis:
+        //foreach($var_array as $clave=>$valor){
+        //  echo $clave."".$valor; //sentencias
+        //}
+        ?>
+        <h3>Recorrer Array Asociativo</h3>
+        <?php 
+        $usuarios=array("u1"=>"Óscar","u2"=>"Jairo","u3"=>"Carmen");
+        foreach ($usuarios as $user=>$nombreUser){
+            echo $user.'->'.$nombreUser.', ';
+        }
+        ?>
+        <h3>Recorrer Array Tradicional</h3>
+        <table>
+            <?php 
+            $usuarios=array("a"=>"Óscar","b"=>"Jairo","c"=>"Carmen","d"=>"Julio","e"=>"Mario","f"=>"Lucía");                for($i=0;$i<5;$i++){ ?>
+            <tr>
+                <?php 
+                
+                foreach ($usuarios as $user=>$nombreUser){
+                    ?> <td> <?php echo $nombreUser; ?>  </td> <?php
+                }
+                ?>
+            </tr>
+            <?php } ?>
+        </table>
+
+        
     </body>
 </html>
