@@ -92,16 +92,16 @@ and open the template in the editor.
             <div class="compra drinks">
                 <label>Coke</label><input type="number" name="Coke" min="0" placeholder="Each"> 
                 <label>Fanta</label><input type="number" name="Fanta" min="0" placeholder="Each"> 
-                <label>Orange Juice</label><input type="number" name="OrangeJuice"  min="0" placeholder="Each"> 
+                <label>Juice</label><input type="number" name="OrangeJuice"  min="0" placeholder="Each"> 
                 <label>Water</label><input type="number" name="Water" min="0" placeholder="Each"> 
             </div>
             </div>
             <div class="datosCliente">
-                <input type="text" name="Name" placeholder="Name">
-                <input type="email" name="Email" placeholder="example@domain.com">
-                <input type="text" name="Adress" placeholder="Street, Road, Ave., etc">
-                <input class="numberHouse" type="text" name="Number" placeholder="Number">
-                <input class="postCode" type="text" name="PostCode" placeholder="PostCode">
+                <input type="text" name="nameUser" placeholder="Name">
+                <input type="email" name="emailUser" placeholder="example@domain.com">
+                <input type="text" name="adressUser" placeholder="Street, Road, Ave., etc">
+                <input class="numberHouse" type="text" name="numberHouse" placeholder="Number">
+                <input class="postCode" type="text" name="postCode" placeholder="PostCode">
                 
                 <a href="#troley"><input class="submit" type="submit" name="form1" value="See Troley"></a>
             </div>
@@ -111,6 +111,7 @@ and open the template in the editor.
         
         <?php
         if (isset($_POST["form1"])) {
+            var_dump($_POST);
             $compra=false;
             $a = 0;
             $products = array(array());
@@ -118,6 +119,7 @@ and open the template in the editor.
         <div class="troley">
             <ul>
                 <?php
+               
                 foreach ($_POST as $product => $quantity) {
                     $quantity = (integer) $quantity;
                     
