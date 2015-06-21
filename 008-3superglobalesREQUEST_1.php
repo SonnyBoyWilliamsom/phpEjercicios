@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -87,12 +83,18 @@ and open the template in the editor.
         </fieldset>
         
         <?php
-         if(isset($_GET["nombre"])){
-             echo 'eeeeeeeeeeeeeh';
-            
-         }else{
-             echo 'Introduzca su nombre!!';
-         }
+       if($_GET){
+           
+            extract($_GET);
+            //echo empty($edad);
+            if($edad=="on" && !empty($nombre)){//si se especifica edad y nombre
+                echo 'Hola '.$nombre.'!!';
+            }else if(($edad=="on" && empty($nombre)) || (empty ($edad)&& empty($nombre))){//si se especifica edad o no pero no nombre
+                echo 'Nombre!';
+            }else if(empty ($edad) && !empty($nombre)){
+                echo 'Eres Menor de edad, No puedes pasar!';
+            }
+        }
                  
         ?>
     </body>

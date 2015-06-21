@@ -1,3 +1,71 @@
+<?php
+        if($_POST["form2"]){
+            var_dump($_POST);
+//            foreach ($_POST as $product => $quantity) {
+//                if (!empty($quantity) && $quantity != "See Troley") {
+//                   $products[$a]["product"] = $product;
+//                    $products[$a]["quantity"] = $quantity;
+//                    $a++;
+//               }
+            
+//            }
+            $arrayPrueba=array("hola","que","tal","amigo");
+            $stringPrueba=implode($arrayPrueba);
+            //header("location: verificacion.php?miArray=$stringPrueba");
+        }
+?>
+        <?php
+            if (isset($_POST["form1"])) {
+          // var_dump($_POST);
+            $compra = false;
+            $a = 0;
+            $products = array(array());
+           ?>
+            <div class="trolley">
+                <h2>Trolley</h2>
+                <ul>
+                    <?php
+                    foreach ($_POST as $product => $quantity) {
+                        $quantity = (integer) $quantity;
+
+                        if (!empty($quantity) && gettype($quantity) == "integer" && $product != "numberHouse" && $product != "postCode") {
+                            ?>
+
+                                <li> <span class="producto"> <?= $product ?> </span> : <span class="cantidad"> <?= $quantity ?> </span>
+                                <?php $compra = true; ?></li>
+
+                            <?php
+                        }
+                    }
+                    if ($compra) {
+                        echo '<br><form action="index.php" method="post">'
+                                . '<input class="submit" type="submit" name="form2" value="Pay">' . '</form> ';
+                        
+                    }else{
+                        echo 'No products selected!';
+                    }
+                    ?> 
+                </ul>
+           
+            <?php
+//            foreach ($_POST as $product => $quantity) {
+//                if (!empty($quantity) && $quantity != "See Troley") {
+//                    $products[$a]["product"] = $product;
+//                    $products[$a]["quantity"] = $quantity;
+//                    $a++;
+//                }
+//            }
+//
+//           
+//
+//            foreach ($products as $index => $productInfo) {
+//                echo $productInfo["product"].": ".$productInfo["quantity"]."<br>";
+//            }
+
+            
+            echo '</div>';
+        }
+        ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -14,7 +82,10 @@ and open the template in the editor.
 
             html{height: 100%;}
             body{font-family: sans-serif; }
-            .datosCliente, .troley, .trolley{
+            h2{text-align: center;}
+            
+            /*Personal data Form and Trolley-------------------*/
+            .datosCliente, .trolley{
                 padding: 5%;
                 background: rgba(85,85,85,.4);
                 width: 40%;
@@ -23,7 +94,9 @@ and open the template in the editor.
                 
                 
             }
-
+            .trolley ul{list-style-type: none; padding: 10px; text-align:center;}
+            .producto{font-size: 1.2em; text-align: left;}
+            /*Form Fields-------------------------------------*/
 
             input[type="text"],  input[type="email"], input[type="password"], input[type="number"], input[type="submit"]{
                 color: #555;
@@ -39,35 +112,48 @@ and open the template in the editor.
             }
 
             input[type="text"].numberHouse, input[type="text"].postCode{ width: 50%; }
-            input[type="submit"].submit{  font:  1.4em sans-serif; color: #000;  text-shadow: 0 0 0.5px rgba(0, 0, 0, .9);box-shadow: none;width: 35%; float: right; margin-top: -20px; cursor: pointer;}
+            input[type="submit"].submit{  font:  1em sans-serif; color: #000;  text-shadow: 0 0 0.5px rgba(0, 0, 0, .9);box-shadow: none;width: 35%; float: right; margin-top: -20px; cursor: pointer; padding:1%}
             input[type="submit"].submit:hover{ background: #fff;box-shadow: 2px 2px 5px rgba(0, 0, 0, .9); text-shadow: none;}
             .compraGeneral input[type="number"]{ text-align: center; font-size: 1.5em;}
 /*            .cantidades input[type="number"]{  border-radius: 5px;width: 60%; float: right;}*/
-            .compra span{
-                text-transform: uppercase;
-                font-size: 1.5em;
-                padding: 5px;
-            }
+            
             label{
                 text-transform: uppercase;
-                font-size: 1.5em;
+                font-size: 1.2em;
                 padding: 5px;
                
             }
+            
+            /*Store---------------------------------------------*/
             .compraGeneral{overflow: hidden;}
             .compra{
                 width: 25%;
                 float: left;
-                padding: 5%;
+                padding: 2%;
+                
             }
-/*            .fruits{background: rgba(84,153,69,.5)}
+/*           .fruits{background: rgba(84,153,69,.5)}
             .dairy{background: rgba(14,62,115,.5);}
             .meat{background: rgba(251,67,59,.5);}
             .drinks{background: rgba(250,122,40,.5);*/
-           
+
+            /*Responsive----------------------------------------*/
+            @media(max-width: 650px){
+                
+                .compraGeneral{width:60%; margin: 0 auto;}
+                .compra{
+                width: 100%;
+                float: none;
+                margin-top: 5%;
+                }
+                .datosCliente, .trolley{width:100%}
+               
+            
+            }
         </style>
     </head>
     <body>
+       
         <form action="<?=  $_SERVER["PHP_SELF"]?>" method="post">
             <div class="compraGeneral">
                 
@@ -108,56 +194,6 @@ and open the template in the editor.
             
 
         </form>
-        
-        <?php
-        if (isset($_POST["form1"])) {
-            var_dump($_POST);
-            $compra=false;
-            $a = 0;
-            $products = array(array());
-            ?>
-        <div class="troley">
-            <ul>
-                <?php
-               
-                foreach ($_POST as $product => $quantity) {
-                    $quantity = (integer) $quantity;
-                    
-                    if (!empty($quantity) &&  gettype($quantity)=="integer" && $product!="Number" && $product!="PostCode") {?>
-                        
-                        <li> <?= $product . ": " . $quantity; $compra=true;?></li>
-                        
-                    <?php
-                    } 
-                }
-                if($compra==false){ echo 'No products selected!'; }
-                ?> 
-            </ul>
-        </div>
-            <?php 
-           
-            
-//            foreach ($_POST as $product => $quantity) {
-//                if (!empty($quantity) && $quantity != "See Troley") {
-//                    $products[$a]["product"] = $product;
-//                    $products[$a]["quantity"] = $quantity;
-//                    $a++;
-//                }
-//            }
-//
-//           
-//
-//            foreach ($products as $index => $productInfo) {
-//                echo $productInfo["product"].": ".$productInfo["quantity"]."<br>";
-//            }
-        
-            echo '<form class="trolley" action="verificacion.php" method="post">'
-            . '<input class="submit" type="submit" name="form2" value="Pay">' . '</form>';
-
-            
-            
-            
-        }
-        ?>
+      
     </body>
 </html>

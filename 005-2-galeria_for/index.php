@@ -1,5 +1,8 @@
 <?php 
-$pictures=array("river.jpg","singapore.jpg","windows.jpg");
+$pictures=array(array("nombreFoto"=>"river.jpg","picTitle"=>"River"),
+                array("nombreFoto"=>"singapore.jpg","picTitle"=>"Singapore"),
+                array("nombreFoto"=>"windows.jpg","picTitle"=>"Windows")
+                );
 ?>
 <!DOCTYPE html>
 
@@ -19,8 +22,8 @@ $pictures=array("river.jpg","singapore.jpg","windows.jpg");
             for($i=0;$i<count($pictures);$i++){
                
             ?>
-            <a href="watch.php?nombreFoto=<?=$pictures[$i]?>&title=River">
-                <img src="img/<?=$pictures[$i]?>" alt="">
+            <a href="watch.php?nombreFoto=<?=$pictures[$i]["nombreFoto"]?>&title=<?=$pictures[$i]["picTitle"]?>">
+                <img src="img/<?=$pictures[$i]["nombreFoto"]?>" alt="">
             </a>
             <?php
             }

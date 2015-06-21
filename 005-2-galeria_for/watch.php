@@ -1,7 +1,8 @@
 <?php 
 if(!$_GET){
     header("location:index.php");
-}else{extract($_GET);} ?>
+}else{extract($_GET);}
+var_dump($_GET)?>
 <!DOCTYPE html>
 
 <html>

@@ -9,7 +9,7 @@
         
         <?php
         // Función strlen($var_name)=devuelve el número de caracteres que contiene un string
-        echo strlen("Hola que tal amigo")."<br>";
+        echo strlen("Holaquetalamigo")."<br>";
         
         $frase = "Hola que tál amigo";
         echo strlen($frase)."<br>";
@@ -84,7 +84,7 @@
           <h2>Conversión en función de método</h2>  
           <?php
           //Función mb_convert_case($vas_name, método, encoding)=según el método que le especifiquemos a la función realiza una conversión u otra. Dispone de tres métodos posibles (MB_CASE_UPPER, MB_CASE_LOWER, MB_CASE_TITLE) que equiparan a las funciones que hemos visto antes
-          $texto = "tengo un árbol en mi jardín";
+          $texto = "áengo un árbol en mi jardín";
           $a = mb_convert_case($texto, MB_CASE_UPPER, "UTF-8");
           $b = mb_convert_case($a, MB_CASE_LOWER, "UTF-8");
           $c = mb_convert_case($a, MB_CASE_TITLE, "UTF-8");

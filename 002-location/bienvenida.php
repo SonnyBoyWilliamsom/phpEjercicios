@@ -1,4 +1,6 @@
-<?php var_dump($_GET); ?>
+<?php 
+
+$a = strlen($_GET["email"]) - strlen(strrchr($_GET["email"], "@"));?>
 <!DOCTYPE html>
 
 <html>
@@ -7,6 +9,6 @@
         <title></title>
     </head>
     <body>
-        <h1>Bienvenid@ <?= "eooo" ?> </h1>
+        <h1>Bienvenida <?= ucfirst(substr($_GET["email"],0,$a)); ?> </h1>
     </body>
 </html>

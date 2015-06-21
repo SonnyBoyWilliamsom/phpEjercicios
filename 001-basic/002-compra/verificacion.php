@@ -12,8 +12,8 @@ and open the template in the editor.
     <body>
         <?php
         
-        var_dump($_GET);
-        extract($_GET);
+        var_dump($_POST);
+        extract($_POST);
         
         echo "Verificando";
         ?>
