@@ -32,6 +32,9 @@ switch($code){
         <link href="style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <h1>Subida de archivos</h1>
+        <h4>Solo se permite la subida de imagenes y documentos tipo .doc o .pdf</h4>
+        <p>Max. Size: 1Mb</p>
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <input type="file" name="FotoDoc">
             <input type="submit" name="upForm" value="Send">

@@ -42,7 +42,7 @@ if(in_array($ext,$extPermitidas) && in_array($type,$typePermitidos) && $size<=$s
     //Función file_exists(ruta/nombrefichero)= devuelve T/F si encuentra el fichero en la ruta
     if(move_uploaded_file($tmp_name, "upload/".time()."_".$name)){
        
-        $codigo=1;corregirrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+        $codigo=1;/*hay que comprobar si el fichero ya existe, cambiar este if!!!!!!!!!*/
     }else{
         //Función move_uploaded_file(tmp_name, rutaDestino/nameFichero) = devuelve T/F si se ha subido correctamente el fichero a la ruta de destino. Sirve para subir el archivo a la ruta especificada y comprobar si un fichero se ha subido correctamente
         if(move_uploaded_file($tmp_name, "upload/".$name) ){
