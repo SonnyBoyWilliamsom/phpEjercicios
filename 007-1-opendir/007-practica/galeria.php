@@ -16,10 +16,9 @@ $directorio=opendir("upload/");
            <?php 
             $position=0;
             while($nameArchivo = readdir($directorio)){ 
-              echo $nameArchivo;
-              echo $position;
+//              echo $nameArchivo;
+//              echo $position;
                 if(substr($nameArchivo,0,1) != "." ){ ?>
-                    
                     <a href="watch.php?position=<?=$position?>">
                 <img src="upload/<?=$nameArchivo?>" width="200">
             </a>

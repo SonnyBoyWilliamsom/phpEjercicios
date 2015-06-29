@@ -50,7 +50,7 @@ and open the template in the editor.
         
          <!--Cerramos el directorio previamente abierto-->
         <?php 
-var_dump($fotos);
+//        var_dump($fotos);
         closedir($directorio) ?>
     </body>
 </html>
