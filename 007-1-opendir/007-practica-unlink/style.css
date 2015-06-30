@@ -1,0 +1,77 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+body{
+    font-family: sans-serif;
+    background: #ccffcc;
+    padding: 10%;
+    text-align: center;
+    
+}
+/*INDEX==================================================================*/
+input{
+    background: #333333;
+    color: #ccc;
+    padding: 10px;
+    outline: none;
+}
+
+/*MENSAJES DE LA PAGINA DE SUBIDA*/
+[class^=mng]{
+    color: red;
+    font-weight: bold;
+    padding: 5px;
+   
+
+}
+[class=mng2]{
+    color: teal;
+}
+a{text-decoration: none;
+}
+/*GALLERY===============================================================*/
+#gallery{
+    overflow: hidden; 
+    margin: 0 auto; 
+}
+#gallery img{
+   height: 250px;
+   width: 250px;
+   margin: 2.5px;
+   vertical-align: top;
+   border-radius: 50%;
+}
+#gallery a{
+    display: inline-block;
+    color: teal;
+    font-weight: bold; 
+    padding: 10px;
+   
+    text-transform: uppercase;
+}
+ 
+/*WATCH-PAGE=========================================================*/
+section#watch img{max-width: 400px;display:block;margin: 0 auto;}
+section#watch img{
+    width: 100%;
+    border: #fff solid 5px;
+}
+section#watch a{
+   background: #fff;
+   color: #000;
+   display: inline-block;
+   padding: 20px;
+   margin-top: 20px;
+}
+/*RESPONSIVE==========================================================*/
+@media (max-width: 700px) {
+  #gallery img {
+     width: 200px;
+     height: 200px;
+     float: none;
+  }
+  #gallery a{
+      display: inline;
+      padding: 0;
+      border: 0;
+  }
+}

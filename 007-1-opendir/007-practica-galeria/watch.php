@@ -1,29 +1,32 @@
 <?php
 //Abrimos la carpeta que queremos leer -> opendir(carpeta). Ademas se crea un array con el nombre de los archivos para poder recorrerlo hacia delante y hacia atrás
 $directorio = opendir("upload/");
-$p = 0;
+
 $fotos = array();
 while ($nameArchivo = readdir($directorio)) {
-
     if (substr($nameArchivo, 0, 1) != ".") {
-        $fotos[$p] = $nameArchivo;
-        $p++;
+        $fotos []= $nameArchivo;//Asignación de valores a un array sin usar variable contador
+        
     }
 }
 
 if( !isset($_GET["position"])){ //sino viene la información por GET que necesita este documento para funcionar, quiere decir que han intentado ejecutar este fichero sin pasar previamente por la galería, por tanto le enviamos a ella para que pinchen una foto
-    header("location:index.php");
-}else{
+    header("location:index.php?c=10");
+}else {
     extract($_GET);
-    $positionWa=$position-1;
-    $positionWs=$position+1;
-    if($position==0){
-        $positionWa = count($fotos)-1;
-    }else if($position==count($fotos)-1){
-        $positionWs=0;
+    if(count($fotos)>1) {
+        $positionWa = $position - 1;
+        $positionWs = $position + 1;
+        if ($position == 0) {
+            $positionWa = count($fotos) - 1;
+        } else if ($position == count($fotos) - 1) {
+            $positionWs = 0;
+        }
+    }else{
+        $positionWa = 0;
+        $positionWs = 0;
     }
 }
-
 ?>
 <!DOCTYPE html>
 <!--
