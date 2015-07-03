@@ -11,8 +11,7 @@ $consulta .= "\r\n Email enviado por: $nombre $apellido con telefono $telefono";
 //Hay que especificar la cabecera del email con el destinatario, el sender, CC, Bcc:
 ////////Para envio multiple, repetimos con un bucle el envío a cada uno de los destinatarios////////////////////////////////////////////////////////////////
 
-for($i=0;$i<count($departamento);$i++) {
-    $header = "To: Cice <$departamento>" . "\r\n";
+
     $header .= "From: $nombre $apellido <$emailUser>" . "\r\n";
     $header .= "BCC: Jesús JefeMáximo <jesiaz75@gmail.com>";
 //Una vez hemos establecido todos los parametros enecesarios para enviar el email se puede usar la funcion mail():
@@ -24,7 +23,7 @@ for($i=0;$i<count($departamento);$i++) {
         $title = "¡Lo sentimos! Fallo en el envío del formulario.";
         $subtitle = "Contacte con el administrador.";
     }
-}
+
 //Envio de confirmación al usuario
 $header = "To: $nombre $apellido <$emailUser>"."\r\n";
 $header .= "From: Cice <$departamento>"."\r\n";
