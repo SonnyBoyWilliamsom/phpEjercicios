@@ -1,0 +1,37 @@
+input, select, textarea{
+    margin: 10px;
+    padding: 5px;
+    width: 250px;
+    outline: none;
+
+}body{
+    font-family: sans-serif;
+    padding: 5%;
+    text-align: center;
+}
+h1{
+    color: tomato;
+}
+p{
+    font-size: 1.3em;
+    color: red;
+}
+select{
+    width: 265px;
+}
+form{
+    width: 270px;
+    margin: 0 auto; 
+}
+
+input[type="submit"]{
+   
+    border:none;
+    padding: 15px;
+    background: tomato;
+    color:#fff;
+    font-size: 1.4em;
+}
+input[type="radio"]{
+   width: 5%;
+}
