@@ -1,0 +1,73 @@
+ 
+@keyframes loginOut{
+    0%{left: 0;}
+    100%{left: -120%; display:none;}
+}
+input, select, textarea{
+    margin: 10px;
+    padding: 10px 5px;
+    font-size: 0.8em;
+    width: 250px;
+
+    border-bottom: 2px solid #cdcdcd;
+    border-radius: 5px;
+    outline: none;
+
+}body{
+    font-family: sans-serif;
+    text-align: center;
+}
+h1{
+    background: #fff;
+    color: tomato;
+    width: 145px;
+    margin: 0 auto;
+    position: relative;
+    top: 19px;
+}
+h3{
+    background: #99ff99;
+    color: #339900;
+    position:relative;
+    padding: 10px;
+    -webkit-animation: loginOut 1s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+}
+p{
+    font-size: 1.3em;
+    color: red;
+}
+a{
+    display: inline-block;
+
+    padding:10px;
+}
+select{
+    width: 265px;
+}
+form{
+    width: 284px;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 30px;
+    border: 2px solid tomato;
+    border-radius: 45px;
+}
+textarea { 
+    resize:vertical;/*Evita que la ventana de texto se ensanche, pero permite que se alargue*/ 
+}
+
+input[type="submit"]{
+    background: #cdcdcd;
+    color:#fff;
+    font-size: 1.3em;
+    width: 100px;
+    margin-left: 175px;
+    padding: 5px;
+    border: 2px solid tomato;
+    border-radius: 5px;
+    text-shadow: 0 1px 1px #000;
+    cursor: pointer;
+
+    }
+
