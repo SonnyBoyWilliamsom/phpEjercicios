@@ -1,0 +1,74 @@
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+html{height: 100%;}
+body{font-family: sans-serif; }
+h2{text-align: center;}
+
+/*Personal data Form and Trolley-------------------*/
+.datosCliente, .trolley{
+    padding: 5%;
+    background: rgba(85,85,85,.4);
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 5px;
+
+
+}
+.trolley ul{list-style-type: none; padding: 10px; text-align:center;}
+.producto{font-size: 1.2em; text-align: left;}
+/*Form Fields-------------------------------------*/
+
+input[type="text"],  input[type="email"], input[type="password"], input[type="number"], input[type="submit"]{
+    color: #555;
+    height: 50px;
+    line-height:50px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #000;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, .9);
+    font:  1.1em sans-serif;
+    border-radius: 5px;
+}
+
+input[type="text"].numberHouse, input[type="text"].postCode{ width: 50%; }
+input[type="submit"].submit{  font:  1em sans-serif; color: #000;  text-shadow: 0 0 0.5px rgba(0, 0, 0, .9);box-shadow: none;width: 35%; float: right; margin-top: -20px; cursor: pointer; padding:1%}
+input[type="submit"].submit:hover{ background: #fff;box-shadow: 2px 2px 5px rgba(0, 0, 0, .9); text-shadow: none;}
+.compraGeneral input[type="number"]{ text-align: center; font-size: 1.5em;}
+/*            .cantidades input[type="number"]{  border-radius: 5px;width: 60%; float: right;}*/
+
+label{
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 5px;
+
+}
+
+/*Store---------------------------------------------*/
+.compraGeneral{overflow: hidden;}
+.compra{
+    width: 25%;
+    float: left;
+    padding: 2%;
+
+}
+/*           .fruits{background: rgba(84,153,69,.5)}
+            .dairy{background: rgba(14,62,115,.5);}
+            .meat{background: rgba(251,67,59,.5);}
+            .drinks{background: rgba(250,122,40,.5);*/
+
+/*Responsive----------------------------------------*/
+@media(max-width: 650px){
+
+    .compraGeneral{width:60%; margin: 0 auto;}
+    .compra{
+        width: 100%;
+        float: none;
+        margin-top: 5%;
+    }
+    .datosCliente, .trolley{width:100%}
+
+
+}
