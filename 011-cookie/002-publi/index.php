@@ -21,7 +21,7 @@ if(isset($_POST["formSearch"])){
                 <input type="submit" name="formSearch" value="Go">
 
             </form>
-            <img src="">
+            <img src="<?=?>">
         </main>
 
     </body>
