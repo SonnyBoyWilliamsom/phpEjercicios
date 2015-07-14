@@ -87,3 +87,6 @@ header nav li:not(:first-child){
     border-left: 1px solid #339900;
 }
 main:not(#login){padding: 2%;}
+.notFound{
+    color: red;
+}

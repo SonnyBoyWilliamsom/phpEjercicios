@@ -10,4 +10,5 @@ var_dump($_SESSION["products"]);
 
 echo "Verificando";
 include './inc/foot.php';
+session_destroy();
 ?>
