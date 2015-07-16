@@ -1,7 +1,11 @@
 <?php
+ define("PIC_PATH", "img/");//constante que indica el path de las imágenes
+ $class = "";
+ $msg = "";
+ $picPath="";
 if(isset($_POST["formSearch"])){
+    setcookie("picPath", "", time());
     extract($_POST);
-    define("PIC_PATH", "img/");//constante que indica el path de las imágenes
     $found = false;
     $bigArray = array(//bigArray es la variable que almacena palabras clave y las imagenes relacionadas con dichas palabras
                     array(
@@ -18,10 +22,8 @@ if(isset($_POST["formSearch"])){
     for($i=0;$i<count($bigArray);$i++){
         foreach (($bigArray[$i]["palabrasClave"]) as $keyWords){//se puede usar otro bucle for anidado, pero con el foreach el recorrido es más limpio en código
             if($busqueda == $keyWords){
-              
                 $found = true;
                 $picPath = $bigArray[$i]["picPath"];
-               
                 break;//en cuanto se encuentra el elemento se sale del bucle
             }
         }
@@ -29,11 +31,12 @@ if(isset($_POST["formSearch"])){
     setcookie("picPath", $picPath, time() + 10000);
     echo $picPath;
     if($found == false){
-        $class = notFound;
-        $msg = "No resultados en la búsqueda";
+        $class = "notFound";
+        $msg = "No resultados en la búsqueda para ".$busqueda;
     }
+}else{
+     $picPath = $_COOKIE["picPath"];
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +53,9 @@ if(isset($_POST["formSearch"])){
                
                 <input type="submit" name="formSearch" value="Go"></form>
             <p class="<?=$class?>"><?=$msg?></p>
-            <img src="<?=PIC_PATH.$picPath?>">
+            <?php  if($picPath!=""){?>
+                <img src="<?=PIC_PATH.$picPath?>">
+            <?php } ?>
         </main>
 
     </body>

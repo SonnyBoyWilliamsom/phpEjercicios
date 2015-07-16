@@ -90,3 +90,6 @@ main:not(#login){padding: 2%;}
 .notFound{
     color: red;
 }
+img[src="img/"]{
+    display: hidden;
+}
