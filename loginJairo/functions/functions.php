@@ -25,7 +25,7 @@ function check_post($a){
     return false;
 }
 
-function correct_login(){}
+function correct_login(){
     $emailUser = check_post("emailUser");
     $passUser = check_post("passUser");
     $rememberUser = check_post("rememberUser");
@@ -34,6 +34,9 @@ function correct_login(){}
     
     foreach($users as $user){
         if($emailUser == $user["username"] && $passUser == $user["password"]){
+            if($rememberUser){
+                setcookie('username', $emailUser, strtotime('+15 days'));
+            }
             session_start();
             $_SESSION["username"]=$emailUser;
             header("location:profile.php");
@@ -43,4 +46,12 @@ function correct_login(){}
         
        return false;
     }
+}
+
+function log_out(){//Hay que asegurarse que hay sesión iniciada para poder destruirla
+    if(session_status() != PHP_SESSION_ACTIVE){
+        session_start();
+    }//Función session_status() nos indica si la sesión está iniciada o no o si el servidor no acepta sesiones
+    session_destroy();
+}
 ?>

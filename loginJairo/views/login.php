@@ -2,7 +2,7 @@
 <form action="<?=$_SERVER["PHP_SELF"]?>?action=login" method="post">
     <h1>Log In</h1>
     <input type="text" name="emailUser" placeholder="Username or email" />
-    <input type="text" name="passUser" placeholder="Password"/>
+    <input type="password" name="passUser" placeholder="Password"/>
     <label for="rememberUser">Remember me
         <input type="checkbox" name="rememberUser" id="rememberUser"/>
     </label>

@@ -11,7 +11,7 @@
         <input type="checkbox" name="remember" id="remember">
     </label>
    
-    <input type="submit" name="login" value="Go" calss="small button">
+    <input type="submit" name="login" value="Go" class="small button">
     
     <div>
         <a href="<?=$_SERVER["PHP_SELF"]?>?v=forgot">Olvidé la contraseña</a>
