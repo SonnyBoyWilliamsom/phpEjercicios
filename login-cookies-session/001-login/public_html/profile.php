@@ -1,6 +1,6 @@
 <?php 
 include('../functions/funtions.php');
-session_start();//Con la función session_star no se inicia sesión, esta ya existe una vez nos conectamos, lo que en realidad estamos haciendo es dejar a php uqe pueda consultar los datos que se almacena en dicho array
+session_start();//Con la función session_start no se inicia sesión, esta ya existe una vez nos conectamos, lo que en realidad estamos haciendo es dejar a php uqe pueda consultar los datos que se almacena en dicho array
 if(!isset($_SESSION["username"]) || empty($_SESSION["username"])){
     session_destroy();
     header("location:index.php");

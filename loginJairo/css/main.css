@@ -1,15 +1,17 @@
 *{margin: 0; padding: 0; box-sizing: border-box;} 
 
 input, select, textarea{
+    font: 1.2em/1.5 sans-serif;
     margin: 10px;
-    padding: 5px;
-    width: 250px;
+    padding: 10px;
+    width: 80%;
     outline: none;
+    border-radius: 5px;
+    
+    border: 1px solid tomato;
 
 }body{
     font-family: sans-serif;
-
-
 }
 body{
     padding: 5%;
@@ -18,20 +20,56 @@ body{
 h1{
     color: tomato;
 }
+a{
+    text-decoration: none;
+    color: tomato;
+    display: inline-block;
+}
 select{
     width: 265px;
 }
 form{
-
-    width: 270px;
+    background: rgba(0,0,0,.1);
+    width: 360px;
     margin: 0 auto; 
-}
-
-input[type="submit"]{
-    border:none;
     padding: 20px;
+    box-shadow: 0 0 2px tomato; 
+    text-align: center; 
+}
+form#forgot{
+    width: 70%;
+}
+input[type="submit"]{
+    
+    border:none;
+    padding: 10px;
+    width:  40%;
     background: tomato;
     color:#fff;
+}
+label{
+    margin:30px;
+    
+}
+input[type="checkbox"]{
+    width: 5%;
+}
+div.formExtra{
+    text-align: right;
+    
+   width: 90%; 
+}
+.signup{
+    background: rgba(255,102,0,.2);
+    border-radius: 3px;
+    padding: 10px;
+    width: 38%;
+    text-align: center;
+    
+}
+
+.forgot{
+    color: #555555;
 }
 @-webkit-keyframes mensaje{
     0%{opacity: 1;}

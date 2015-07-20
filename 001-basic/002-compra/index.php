@@ -1,4 +1,4 @@
-<?php session_start(); //Se inicia sesión antes de hacer ninguna petición a la misma ?> 
+<?php session_start(); //Se inicia sesión antes de hacers petición a la misma ?> 
 
 <?php 
 
