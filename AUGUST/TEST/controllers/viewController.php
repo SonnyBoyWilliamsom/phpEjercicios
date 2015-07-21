@@ -1,8 +1,11 @@
-<?php
+<?php 
+/*CONTROLADOR de vistas comprobando la variable "view" que nos viene de $_GET*/
+$view=check_get('view');
+switch($view){
+    case "forgot": include '../views/forgot.php'; break;
+    case "signup": include '../views/signup.php'; break;
+    default: include '../views/login.php'; break;
+}
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+?>
 
