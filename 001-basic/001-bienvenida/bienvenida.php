@@ -1,7 +1,7 @@
 <?php
 extract($_POST); //$nombre,$apellido,$sexo
 if($sexo=="f"){
-    $mng="Bienvenida";
+    $mng="Bienvenida amiga mía";
 }else{
     $mng="Bienvenido";
 }
